@@ -1,0 +1,479 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-05-16 03:50:56.448  INFO 40108 --- [           main] com.parking.ParkingApplication           : Starting ParkingApplication v1.0.0 using Java 1.8.0_432 on LAPTOP-9B0M2TI4 with PID 40108 (C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\target\parking-backend-1.0.0.jar started by BLOVESS in C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend)
+2026-05-16 03:50:56.451  INFO 40108 --- [           main] com.parking.ParkingApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-16 03:50:57.586  INFO 40108 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-05-16 03:50:57.593  INFO 40108 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-16 03:50:57.593  INFO 40108 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-05-16 03:50:57.649  INFO 40108 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-16 03:50:57.650  INFO 40108 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1162 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Property 'mapperLocations' was not specified.
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.3.1 
+2026-05-16 03:50:59.108  INFO 40108 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-16 03:50:59.298  INFO 40108 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-16 03:50:59.390  INFO 40108 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-05-16 03:50:59.397  INFO 40108 --- [           main] com.parking.ParkingApplication           : Started ParkingApplication in 3.241 seconds (JVM running for 3.564)
+2026-05-16 03:52:56.989  INFO 40108 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-16 03:52:56.989  INFO 40108 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-16 03:52:56.990  INFO 40108 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79e3779c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1386696283 wrapping com.mysql.cj.jdbc.ConnectionImpl@21932943] will not be managed by Spring
+==>  Preparing: SELECT id,username,password,role,create_time FROM sys_user WHERE (username = ?)
+==> Parameters: admin(String)
+<==    Columns: id, username, password, role, create_time
+<==        Row: 1, admin, $2b$10$FZ3Ai170DK0JvDMWDc.8X.OV82dMOHAkjg1N4P7.LmOIXJtfrRdl., admin, 2026-05-10 19:16:04
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79e3779c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f0c87fc] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1022906991 wrapping com.mysql.cj.jdbc.ConnectionImpl@21932943] will not be managed by Spring
+==>  Preparing: SELECT id,space_code,area,status,x_coordinate,y_coordinate FROM parking_space
+==> Parameters: 
+<==    Columns: id, space_code, area, status, x_coordinate, y_coordinate
+<==        Row: 1, A001, A, 0, 52.0, 65.0
+<==        Row: 2, A002, A, 0, 86.0, 65.0
+<==        Row: 3, A003, A, 0, 120.0, 65.0
+<==        Row: 4, A004, A, 0, 154.0, 65.0
+<==        Row: 5, A005, A, 0, 188.0, 65.0
+<==        Row: 6, A006, A, 0, 256.0, 65.0
+<==        Row: 7, A007, A, 0, 290.0, 65.0
+<==        Row: 8, A008, A, 0, 324.0, 65.0
+<==        Row: 9, A009, A, 0, 358.0, 65.0
+<==        Row: 10, A010, A, 0, 392.0, 65.0
+<==        Row: 11, A011, A, 0, 562.0, 65.0
+<==        Row: 12, A012, A, 0, 596.0, 65.0
+<==        Row: 13, A013, A, 0, 630.0, 65.0
+<==        Row: 14, A014, A, 0, 664.0, 65.0
+<==        Row: 15, A015, A, 0, 698.0, 65.0
+<==        Row: 16, A016, A, 0, 766.0, 65.0
+<==        Row: 17, A017, A, 0, 800.0, 65.0
+<==        Row: 18, A018, A, 0, 834.0, 65.0
+<==        Row: 19, A019, A, 0, 868.0, 65.0
+<==        Row: 20, A020, A, 0, 902.0, 65.0
+<==        Row: 21, B001, B, 0, 52.0, 185.0
+<==        Row: 22, B002, B, 0, 86.0, 185.0
+<==        Row: 23, B003, B, 0, 120.0, 185.0
+<==        Row: 24, B004, B, 0, 154.0, 185.0
+<==        Row: 25, B005, B, 0, 188.0, 185.0
+<==        Row: 26, B006, B, 0, 52.0, 245.0
+<==        Row: 27, B007, B, 0, 86.0, 245.0
+<==        Row: 28, B008, B, 0, 120.0, 245.0
+<==        Row: 29, B009, B, 0, 154.0, 245.0
+<==        Row: 30, B010, B, 0, 188.0, 245.0
+<==        Row: 31, B011, B, 0, 222.0, 185.0
+<==        Row: 32, B012, B, 0, 256.0, 185.0
+<==        Row: 33, B013, B, 0, 290.0, 185.0
+<==        Row: 34, B014, B, 0, 324.0, 185.0
+<==        Row: 35, B015, B, 0, 358.0, 185.0
+<==        Row: 36, B016, B, 0, 426.0, 185.0
+<==        Row: 37, B017, B, 0, 460.0, 185.0
+<==        Row: 38, B018, B, 0, 494.0, 185.0
+<==        Row: 39, B019, B, 0, 528.0, 185.0
+<==        Row: 40, B020, B, 0, 596.0, 185.0
+<==        Row: 41, B021, B, 0, 630.0, 185.0
+<==        Row: 42, B022, B, 0, 664.0, 185.0
+<==        Row: 43, B023, B, 0, 698.0, 185.0
+<==        Row: 44, B024, B, 0, 732.0, 185.0
+<==        Row: 45, B025, B, 0, 222.0, 245.0
+<==        Row: 46, B026, B, 0, 256.0, 245.0
+<==        Row: 47, B027, B, 0, 290.0, 245.0
+<==        Row: 48, B028, B, 0, 324.0, 245.0
+<==        Row: 49, B029, B, 0, 358.0, 245.0
+<==        Row: 50, B030, B, 0, 426.0, 245.0
+<==        Row: 51, B031, B, 0, 460.0, 245.0
+<==        Row: 52, B032, B, 0, 494.0, 245.0
+<==        Row: 53, B033, B, 0, 528.0, 245.0
+<==        Row: 54, B034, B, 0, 596.0, 245.0
+<==        Row: 55, B035, B, 0, 630.0, 245.0
+<==        Row: 56, B036, B, 0, 664.0, 245.0
+<==        Row: 57, B037, B, 0, 698.0, 245.0
+<==        Row: 58, B038, B, 0, 732.0, 245.0
+<==        Row: 59, B039, B, 0, 766.0, 185.0
+<==        Row: 60, B040, B, 0, 800.0, 185.0
+<==        Row: 61, B041, B, 0, 834.0, 185.0
+<==        Row: 62, B042, B, 0, 868.0, 185.0
+<==        Row: 63, B043, B, 0, 902.0, 185.0
+<==        Row: 64, B044, B, 0, 766.0, 245.0
+<==        Row: 65, B045, B, 0, 800.0, 245.0
+<==        Row: 66, B046, B, 0, 834.0, 245.0
+<==        Row: 67, B047, B, 0, 868.0, 245.0
+<==        Row: 68, B048, B, 0, 902.0, 245.0
+<==        Row: 69, C001, C, 0, 52.0, 365.0
+<==        Row: 70, C002, C, 0, 86.0, 365.0
+<==        Row: 71, C003, C, 0, 120.0, 365.0
+<==        Row: 72, C004, C, 0, 154.0, 365.0
+<==        Row: 73, C005, C, 0, 188.0, 365.0
+<==        Row: 74, C006, C, 0, 52.0, 425.0
+<==        Row: 75, C007, C, 0, 86.0, 425.0
+<==        Row: 76, C008, C, 0, 120.0, 425.0
+<==        Row: 77, C009, C, 0, 154.0, 425.0
+<==        Row: 78, C010, C, 0, 188.0, 425.0
+<==        Row: 79, C011, C, 0, 222.0, 365.0
+<==        Row: 80, C012, C, 0, 256.0, 365.0
+<==        Row: 81, C013, C, 0, 290.0, 365.0
+<==        Row: 82, C014, C, 0, 324.0, 365.0
+<==        Row: 83, C015, C, 0, 358.0, 365.0
+<==        Row: 84, C016, C, 0, 426.0, 365.0
+<==        Row: 85, C017, C, 0, 460.0, 365.0
+<==        Row: 86, C018, C, 0, 494.0, 365.0
+<==        Row: 87, C019, C, 0, 528.0, 365.0
+<==        Row: 88, C020, C, 0, 596.0, 365.0
+<==        Row: 89, C021, C, 0, 630.0, 365.0
+<==        Row: 90, C022, C, 0, 664.0, 365.0
+<==        Row: 91, C023, C, 0, 698.0, 365.0
+<==        Row: 92, C024, C, 0, 732.0, 365.0
+<==        Row: 93, C025, C, 0, 222.0, 425.0
+<==        Row: 94, C026, C, 0, 256.0, 425.0
+<==        Row: 95, C027, C, 0, 290.0, 425.0
+<==        Row: 96, C028, C, 0, 324.0, 425.0
+<==        Row: 97, C029, C, 0, 358.0, 425.0
+<==        Row: 98, C030, C, 0, 426.0, 425.0
+<==        Row: 99, C031, C, 0, 460.0, 425.0
+<==        Row: 100, C032, C, 0, 494.0, 425.0
+<==        Row: 101, C033, C, 0, 528.0, 425.0
+<==        Row: 102, C034, C, 0, 596.0, 425.0
+<==        Row: 103, C035, C, 0, 630.0, 425.0
+<==        Row: 104, C036, C, 0, 664.0, 425.0
+<==        Row: 105, C037, C, 0, 698.0, 425.0
+<==        Row: 106, C038, C, 0, 732.0, 425.0
+<==        Row: 107, C039, C, 0, 766.0, 365.0
+<==        Row: 108, C040, C, 0, 800.0, 365.0
+<==        Row: 109, C041, C, 0, 834.0, 365.0
+<==        Row: 110, C042, C, 0, 868.0, 365.0
+<==        Row: 111, C043, C, 0, 902.0, 365.0
+<==        Row: 112, C044, C, 0, 766.0, 425.0
+<==        Row: 113, C045, C, 0, 800.0, 425.0
+<==        Row: 114, C046, C, 0, 834.0, 425.0
+<==        Row: 115, C047, C, 0, 868.0, 425.0
+<==        Row: 116, C048, C, 0, 902.0, 425.0
+<==        Row: 117, D001, D, 0, 52.0, 545.0
+<==        Row: 118, D002, D, 0, 86.0, 545.0
+<==        Row: 119, D003, D, 0, 120.0, 545.0
+<==        Row: 120, D004, D, 0, 154.0, 545.0
+<==        Row: 121, D005, D, 0, 188.0, 545.0
+<==        Row: 122, D006, D, 0, 256.0, 545.0
+<==        Row: 123, D007, D, 0, 290.0, 545.0
+<==        Row: 124, D008, D, 0, 324.0, 545.0
+<==        Row: 125, D009, D, 0, 358.0, 545.0
+<==        Row: 126, D010, D, 0, 392.0, 545.0
+<==        Row: 127, D011, D, 0, 562.0, 545.0
+<==        Row: 128, D012, D, 0, 596.0, 545.0
+<==        Row: 129, D013, D, 0, 630.0, 545.0
+<==        Row: 130, D014, D, 0, 664.0, 545.0
+<==        Row: 131, D015, D, 0, 698.0, 545.0
+<==        Row: 132, D016, D, 0, 766.0, 545.0
+<==        Row: 133, D017, D, 0, 800.0, 545.0
+<==        Row: 134, D018, D, 0, 834.0, 545.0
+<==        Row: 135, D019, D, 0, 868.0, 545.0
+<==        Row: 136, D020, D, 0, 902.0, 545.0
+<==      Total: 136
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f0c87fc]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bc39dea] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1426352354 wrapping com.mysql.cj.jdbc.ConnectionImpl@21932943] will not be managed by Spring
+==>  Preparing: SELECT id,username,password,role,create_time FROM sys_user WHERE (username = ?)
+==> Parameters: admin(String)
+<==    Columns: id, username, password, role, create_time
+<==        Row: 1, admin, $2b$10$FZ3Ai170DK0JvDMWDc.8X.OV82dMOHAkjg1N4P7.LmOIXJtfrRdl., admin, 2026-05-10 19:16:04
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bc39dea]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ca6a89a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@576803710 wrapping com.mysql.cj.jdbc.ConnectionImpl@21932943] will not be managed by Spring
+==>  Preparing: SELECT id,space_code,area,status,x_coordinate,y_coordinate FROM parking_space
+==> Parameters: 
+<==    Columns: id, space_code, area, status, x_coordinate, y_coordinate
+<==        Row: 1, A001, A, 0, 52.0, 65.0
+<==        Row: 2, A002, A, 0, 86.0, 65.0
+<==        Row: 3, A003, A, 0, 120.0, 65.0
+<==        Row: 4, A004, A, 0, 154.0, 65.0
+<==        Row: 5, A005, A, 0, 188.0, 65.0
+<==        Row: 6, A006, A, 0, 256.0, 65.0
+<==        Row: 7, A007, A, 0, 290.0, 65.0
+<==        Row: 8, A008, A, 0, 324.0, 65.0
+<==        Row: 9, A009, A, 0, 358.0, 65.0
+<==        Row: 10, A010, A, 0, 392.0, 65.0
+<==        Row: 11, A011, A, 0, 562.0, 65.0
+<==        Row: 12, A012, A, 0, 596.0, 65.0
+<==        Row: 13, A013, A, 0, 630.0, 65.0
+<==        Row: 14, A014, A, 0, 664.0, 65.0
+<==        Row: 15, A015, A, 0, 698.0, 65.0
+<==        Row: 16, A016, A, 0, 766.0, 65.0
+<==        Row: 17, A017, A, 0, 800.0, 65.0
+<==        Row: 18, A018, A, 0, 834.0, 65.0
+<==        Row: 19, A019, A, 0, 868.0, 65.0
+<==        Row: 20, A020, A, 0, 902.0, 65.0
+<==        Row: 21, B001, B, 0, 52.0, 185.0
+<==        Row: 22, B002, B, 0, 86.0, 185.0
+<==        Row: 23, B003, B, 0, 120.0, 185.0
+<==        Row: 24, B004, B, 0, 154.0, 185.0
+<==        Row: 25, B005, B, 0, 188.0, 185.0
+<==        Row: 26, B006, B, 0, 52.0, 245.0
+<==        Row: 27, B007, B, 0, 86.0, 245.0
+<==        Row: 28, B008, B, 0, 120.0, 245.0
+<==        Row: 29, B009, B, 0, 154.0, 245.0
+<==        Row: 30, B010, B, 0, 188.0, 245.0
+<==        Row: 31, B011, B, 0, 222.0, 185.0
+<==        Row: 32, B012, B, 0, 256.0, 185.0
+<==        Row: 33, B013, B, 0, 290.0, 185.0
+<==        Row: 34, B014, B, 0, 324.0, 185.0
+<==        Row: 35, B015, B, 0, 358.0, 185.0
+<==        Row: 36, B016, B, 0, 426.0, 185.0
+<==        Row: 37, B017, B, 0, 460.0, 185.0
+<==        Row: 38, B018, B, 0, 494.0, 185.0
+<==        Row: 39, B019, B, 0, 528.0, 185.0
+<==        Row: 40, B020, B, 0, 596.0, 185.0
+<==        Row: 41, B021, B, 0, 630.0, 185.0
+<==        Row: 42, B022, B, 0, 664.0, 185.0
+<==        Row: 43, B023, B, 0, 698.0, 185.0
+<==        Row: 44, B024, B, 0, 732.0, 185.0
+<==        Row: 45, B025, B, 0, 222.0, 245.0
+<==        Row: 46, B026, B, 0, 256.0, 245.0
+<==        Row: 47, B027, B, 0, 290.0, 245.0
+<==        Row: 48, B028, B, 0, 324.0, 245.0
+<==        Row: 49, B029, B, 0, 358.0, 245.0
+<==        Row: 50, B030, B, 0, 426.0, 245.0
+<==        Row: 51, B031, B, 0, 460.0, 245.0
+<==        Row: 52, B032, B, 0, 494.0, 245.0
+<==        Row: 53, B033, B, 0, 528.0, 245.0
+<==        Row: 54, B034, B, 0, 596.0, 245.0
+<==        Row: 55, B035, B, 0, 630.0, 245.0
+<==        Row: 56, B036, B, 0, 664.0, 245.0
+<==        Row: 57, B037, B, 0, 698.0, 245.0
+<==        Row: 58, B038, B, 0, 732.0, 245.0
+<==        Row: 59, B039, B, 0, 766.0, 185.0
+<==        Row: 60, B040, B, 0, 800.0, 185.0
+<==        Row: 61, B041, B, 0, 834.0, 185.0
+<==        Row: 62, B042, B, 0, 868.0, 185.0
+<==        Row: 63, B043, B, 0, 902.0, 185.0
+<==        Row: 64, B044, B, 0, 766.0, 245.0
+<==        Row: 65, B045, B, 0, 800.0, 245.0
+<==        Row: 66, B046, B, 0, 834.0, 245.0
+<==        Row: 67, B047, B, 0, 868.0, 245.0
+<==        Row: 68, B048, B, 0, 902.0, 245.0
+<==        Row: 69, C001, C, 0, 52.0, 365.0
+<==        Row: 70, C002, C, 0, 86.0, 365.0
+<==        Row: 71, C003, C, 0, 120.0, 365.0
+<==        Row: 72, C004, C, 0, 154.0, 365.0
+<==        Row: 73, C005, C, 0, 188.0, 365.0
+<==        Row: 74, C006, C, 0, 52.0, 425.0
+<==        Row: 75, C007, C, 0, 86.0, 425.0
+<==        Row: 76, C008, C, 0, 120.0, 425.0
+<==        Row: 77, C009, C, 0, 154.0, 425.0
+<==        Row: 78, C010, C, 0, 188.0, 425.0
+<==        Row: 79, C011, C, 0, 222.0, 365.0
+<==        Row: 80, C012, C, 0, 256.0, 365.0
+<==        Row: 81, C013, C, 0, 290.0, 365.0
+<==        Row: 82, C014, C, 0, 324.0, 365.0
+<==        Row: 83, C015, C, 0, 358.0, 365.0
+<==        Row: 84, C016, C, 0, 426.0, 365.0
+<==        Row: 85, C017, C, 0, 460.0, 365.0
+<==        Row: 86, C018, C, 0, 494.0, 365.0
+<==        Row: 87, C019, C, 0, 528.0, 365.0
+<==        Row: 88, C020, C, 0, 596.0, 365.0
+<==        Row: 89, C021, C, 0, 630.0, 365.0
+<==        Row: 90, C022, C, 0, 664.0, 365.0
+<==        Row: 91, C023, C, 0, 698.0, 365.0
+<==        Row: 92, C024, C, 0, 732.0, 365.0
+<==        Row: 93, C025, C, 0, 222.0, 425.0
+<==        Row: 94, C026, C, 0, 256.0, 425.0
+<==        Row: 95, C027, C, 0, 290.0, 425.0
+<==        Row: 96, C028, C, 0, 324.0, 425.0
+<==        Row: 97, C029, C, 0, 358.0, 425.0
+<==        Row: 98, C030, C, 0, 426.0, 425.0
+<==        Row: 99, C031, C, 0, 460.0, 425.0
+<==        Row: 100, C032, C, 0, 494.0, 425.0
+<==        Row: 101, C033, C, 0, 528.0, 425.0
+<==        Row: 102, C034, C, 0, 596.0, 425.0
+<==        Row: 103, C035, C, 0, 630.0, 425.0
+<==        Row: 104, C036, C, 0, 664.0, 425.0
+<==        Row: 105, C037, C, 0, 698.0, 425.0
+<==        Row: 106, C038, C, 0, 732.0, 425.0
+<==        Row: 107, C039, C, 0, 766.0, 365.0
+<==        Row: 108, C040, C, 0, 800.0, 365.0
+<==        Row: 109, C041, C, 0, 834.0, 365.0
+<==        Row: 110, C042, C, 0, 868.0, 365.0
+<==        Row: 111, C043, C, 0, 902.0, 365.0
+<==        Row: 112, C044, C, 0, 766.0, 425.0
+<==        Row: 113, C045, C, 0, 800.0, 425.0
+<==        Row: 114, C046, C, 0, 834.0, 425.0
+<==        Row: 115, C047, C, 0, 868.0, 425.0
+<==        Row: 116, C048, C, 0, 902.0, 425.0
+<==        Row: 117, D001, D, 0, 52.0, 545.0
+<==        Row: 118, D002, D, 0, 86.0, 545.0
+<==        Row: 119, D003, D, 0, 120.0, 545.0
+<==        Row: 120, D004, D, 0, 154.0, 545.0
+<==        Row: 121, D005, D, 0, 188.0, 545.0
+<==        Row: 122, D006, D, 0, 256.0, 545.0
+<==        Row: 123, D007, D, 0, 290.0, 545.0
+<==        Row: 124, D008, D, 0, 324.0, 545.0
+<==        Row: 125, D009, D, 0, 358.0, 545.0
+<==        Row: 126, D010, D, 0, 392.0, 545.0
+<==        Row: 127, D011, D, 0, 562.0, 545.0
+<==        Row: 128, D012, D, 0, 596.0, 545.0
+<==        Row: 129, D013, D, 0, 630.0, 545.0
+<==        Row: 130, D014, D, 0, 664.0, 545.0
+<==        Row: 131, D015, D, 0, 698.0, 545.0
+<==        Row: 132, D016, D, 0, 766.0, 545.0
+<==        Row: 133, D017, D, 0, 800.0, 545.0
+<==        Row: 134, D018, D, 0, 834.0, 545.0
+<==        Row: 135, D019, D, 0, 868.0, 545.0
+<==        Row: 136, D020, D, 0, 902.0, 545.0
+<==      Total: 136
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ca6a89a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3beb6656] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@823332134 wrapping com.mysql.cj.jdbc.ConnectionImpl@21932943] will not be managed by Spring
+==>  Preparing: SELECT id,space_code,area,status,x_coordinate,y_coordinate FROM parking_space
+==> Parameters: 
+<==    Columns: id, space_code, area, status, x_coordinate, y_coordinate
+<==        Row: 1, A001, A, 0, 52.0, 65.0
+<==        Row: 2, A002, A, 0, 86.0, 65.0
+<==        Row: 3, A003, A, 0, 120.0, 65.0
+<==        Row: 4, A004, A, 0, 154.0, 65.0
+<==        Row: 5, A005, A, 0, 188.0, 65.0
+<==        Row: 6, A006, A, 0, 256.0, 65.0
+<==        Row: 7, A007, A, 0, 290.0, 65.0
+<==        Row: 8, A008, A, 0, 324.0, 65.0
+<==        Row: 9, A009, A, 0, 358.0, 65.0
+<==        Row: 10, A010, A, 0, 392.0, 65.0
+<==        Row: 11, A011, A, 0, 562.0, 65.0
+<==        Row: 12, A012, A, 0, 596.0, 65.0
+<==        Row: 13, A013, A, 0, 630.0, 65.0
+<==        Row: 14, A014, A, 0, 664.0, 65.0
+<==        Row: 15, A015, A, 0, 698.0, 65.0
+<==        Row: 16, A016, A, 0, 766.0, 65.0
+<==        Row: 17, A017, A, 0, 800.0, 65.0
+<==        Row: 18, A018, A, 0, 834.0, 65.0
+<==        Row: 19, A019, A, 0, 868.0, 65.0
+<==        Row: 20, A020, A, 0, 902.0, 65.0
+<==        Row: 21, B001, B, 0, 52.0, 185.0
+<==        Row: 22, B002, B, 0, 86.0, 185.0
+<==        Row: 23, B003, B, 0, 120.0, 185.0
+<==        Row: 24, B004, B, 0, 154.0, 185.0
+<==        Row: 25, B005, B, 0, 188.0, 185.0
+<==        Row: 26, B006, B, 0, 52.0, 245.0
+<==        Row: 27, B007, B, 0, 86.0, 245.0
+<==        Row: 28, B008, B, 0, 120.0, 245.0
+<==        Row: 29, B009, B, 0, 154.0, 245.0
+<==        Row: 30, B010, B, 0, 188.0, 245.0
+<==        Row: 31, B011, B, 0, 222.0, 185.0
+<==        Row: 32, B012, B, 0, 256.0, 185.0
+<==        Row: 33, B013, B, 0, 290.0, 185.0
+<==        Row: 34, B014, B, 0, 324.0, 185.0
+<==        Row: 35, B015, B, 0, 358.0, 185.0
+<==        Row: 36, B016, B, 0, 426.0, 185.0
+<==        Row: 37, B017, B, 0, 460.0, 185.0
+<==        Row: 38, B018, B, 0, 494.0, 185.0
+<==        Row: 39, B019, B, 0, 528.0, 185.0
+<==        Row: 40, B020, B, 0, 596.0, 185.0
+<==        Row: 41, B021, B, 0, 630.0, 185.0
+<==        Row: 42, B022, B, 0, 664.0, 185.0
+<==        Row: 43, B023, B, 0, 698.0, 185.0
+<==        Row: 44, B024, B, 0, 732.0, 185.0
+<==        Row: 45, B025, B, 0, 222.0, 245.0
+<==        Row: 46, B026, B, 0, 256.0, 245.0
+<==        Row: 47, B027, B, 0, 290.0, 245.0
+<==        Row: 48, B028, B, 0, 324.0, 245.0
+<==        Row: 49, B029, B, 0, 358.0, 245.0
+<==        Row: 50, B030, B, 0, 426.0, 245.0
+<==        Row: 51, B031, B, 0, 460.0, 245.0
+<==        Row: 52, B032, B, 0, 494.0, 245.0
+<==        Row: 53, B033, B, 0, 528.0, 245.0
+<==        Row: 54, B034, B, 0, 596.0, 245.0
+<==        Row: 55, B035, B, 0, 630.0, 245.0
+<==        Row: 56, B036, B, 0, 664.0, 245.0
+<==        Row: 57, B037, B, 0, 698.0, 245.0
+<==        Row: 58, B038, B, 0, 732.0, 245.0
+<==        Row: 59, B039, B, 0, 766.0, 185.0
+<==        Row: 60, B040, B, 0, 800.0, 185.0
+<==        Row: 61, B041, B, 0, 834.0, 185.0
+<==        Row: 62, B042, B, 0, 868.0, 185.0
+<==        Row: 63, B043, B, 0, 902.0, 185.0
+<==        Row: 64, B044, B, 0, 766.0, 245.0
+<==        Row: 65, B045, B, 0, 800.0, 245.0
+<==        Row: 66, B046, B, 0, 834.0, 245.0
+<==        Row: 67, B047, B, 0, 868.0, 245.0
+<==        Row: 68, B048, B, 0, 902.0, 245.0
+<==        Row: 69, C001, C, 0, 52.0, 365.0
+<==        Row: 70, C002, C, 0, 86.0, 365.0
+<==        Row: 71, C003, C, 0, 120.0, 365.0
+<==        Row: 72, C004, C, 0, 154.0, 365.0
+<==        Row: 73, C005, C, 0, 188.0, 365.0
+<==        Row: 74, C006, C, 0, 52.0, 425.0
+<==        Row: 75, C007, C, 0, 86.0, 425.0
+<==        Row: 76, C008, C, 0, 120.0, 425.0
+<==        Row: 77, C009, C, 0, 154.0, 425.0
+<==        Row: 78, C010, C, 0, 188.0, 425.0
+<==        Row: 79, C011, C, 0, 222.0, 365.0
+<==        Row: 80, C012, C, 0, 256.0, 365.0
+<==        Row: 81, C013, C, 0, 290.0, 365.0
+<==        Row: 82, C014, C, 0, 324.0, 365.0
+<==        Row: 83, C015, C, 0, 358.0, 365.0
+<==        Row: 84, C016, C, 0, 426.0, 365.0
+<==        Row: 85, C017, C, 0, 460.0, 365.0
+<==        Row: 86, C018, C, 0, 494.0, 365.0
+<==        Row: 87, C019, C, 0, 528.0, 365.0
+<==        Row: 88, C020, C, 0, 596.0, 365.0
+<==        Row: 89, C021, C, 0, 630.0, 365.0
+<==        Row: 90, C022, C, 0, 664.0, 365.0
+<==        Row: 91, C023, C, 0, 698.0, 365.0
+<==        Row: 92, C024, C, 0, 732.0, 365.0
+<==        Row: 93, C025, C, 0, 222.0, 425.0
+<==        Row: 94, C026, C, 0, 256.0, 425.0
+<==        Row: 95, C027, C, 0, 290.0, 425.0
+<==        Row: 96, C028, C, 0, 324.0, 425.0
+<==        Row: 97, C029, C, 0, 358.0, 425.0
+<==        Row: 98, C030, C, 0, 426.0, 425.0
+<==        Row: 99, C031, C, 0, 460.0, 425.0
+<==        Row: 100, C032, C, 0, 494.0, 425.0
+<==        Row: 101, C033, C, 0, 528.0, 425.0
+<==        Row: 102, C034, C, 0, 596.0, 425.0
+<==        Row: 103, C035, C, 0, 630.0, 425.0
+<==        Row: 104, C036, C, 0, 664.0, 425.0
+<==        Row: 105, C037, C, 0, 698.0, 425.0
+<==        Row: 106, C038, C, 0, 732.0, 425.0
+<==        Row: 107, C039, C, 0, 766.0, 365.0
+<==        Row: 108, C040, C, 0, 800.0, 365.0
+<==        Row: 109, C041, C, 0, 834.0, 365.0
+<==        Row: 110, C042, C, 0, 868.0, 365.0
+<==        Row: 111, C043, C, 0, 902.0, 365.0
+<==        Row: 112, C044, C, 0, 766.0, 425.0
+<==        Row: 113, C045, C, 0, 800.0, 425.0
+<==        Row: 114, C046, C, 0, 834.0, 425.0
+<==        Row: 115, C047, C, 0, 868.0, 425.0
+<==        Row: 116, C048, C, 0, 902.0, 425.0
+<==        Row: 117, D001, D, 0, 52.0, 545.0
+<==        Row: 118, D002, D, 0, 86.0, 545.0
+<==        Row: 119, D003, D, 0, 120.0, 545.0
+<==        Row: 120, D004, D, 0, 154.0, 545.0
+<==        Row: 121, D005, D, 0, 188.0, 545.0
+<==        Row: 122, D006, D, 0, 256.0, 545.0
+<==        Row: 123, D007, D, 0, 290.0, 545.0
+<==        Row: 124, D008, D, 0, 324.0, 545.0
+<==        Row: 125, D009, D, 0, 358.0, 545.0
+<==        Row: 126, D010, D, 0, 392.0, 545.0
+<==        Row: 127, D011, D, 0, 562.0, 545.0
+<==        Row: 128, D012, D, 0, 596.0, 545.0
+<==        Row: 129, D013, D, 0, 630.0, 545.0
+<==        Row: 130, D014, D, 0, 664.0, 545.0
+<==        Row: 131, D015, D, 0, 698.0, 545.0
+<==        Row: 132, D016, D, 0, 766.0, 545.0
+<==        Row: 133, D017, D, 0, 800.0, 545.0
+<==        Row: 134, D018, D, 0, 834.0, 545.0
+<==        Row: 135, D019, D, 0, 868.0, 545.0
+<==        Row: 136, D020, D, 0, 902.0, 545.0
+<==      Total: 136
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3beb6656]
