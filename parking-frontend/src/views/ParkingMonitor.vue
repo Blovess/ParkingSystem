@@ -384,9 +384,7 @@ async function fetchRoute(spaceId) {
     })
     const json = await res.json()
     if (json.code === 200) {
-      const path = json.data.path || []
-      path.push({ x: space.xcoordinate, y: space.ycoordinate })
-      routePath.value = path
+      routePath.value = json.data.path || []
       draw()
     }
   } catch {}
