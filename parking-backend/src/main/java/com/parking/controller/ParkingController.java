@@ -181,7 +181,6 @@ public class ParkingController {
     // ==================== Recommend ====================
 
     @PostMapping("/recommend")
-    @Transactional
     public Result recommend(@RequestBody Map<String, Object> body) {
         String plateNumber = (String) body.get("plateNumber");
         String target = (String) body.get("target");
@@ -323,21 +322,7 @@ public class ParkingController {
             }
         }
 
-        // 5. Create parking record (space_id = NULL, assigned later in the frontend)
-        ParkingRecord record = new ParkingRecord();
-        record.setPlateNumber(plateNumber);
-        record.setSpaceId(null);
-        record.setEntryTime(LocalDateTime.now());
-        record.setStatus(0);
-        parkingRecordService.save(record);
-
-        ParkingOrder order = new ParkingOrder();
-        order.setRecordId(record.getId());
-        order.setAmount(BigDecimal.ZERO);
-        order.setPayStatus(0);
-        parkingOrderService.save(order);
-
-        // 6. Get road path from Python microservice
+        // 5. Get road path from Python microservice
         List<Map<String, Object>> path = new ArrayList<>();
         try {
             RestTemplate rt = new RestTemplate();
@@ -364,8 +349,6 @@ public class ParkingController {
 
         // 7. Build response
         Map<String, Object> data = new LinkedHashMap<>();
-        data.put("recordId", record.getId());
-        data.put("orderId", order.getId());
 
         Map<String, Object> rec = new LinkedHashMap<>();
         rec.put("id", best.getId());
