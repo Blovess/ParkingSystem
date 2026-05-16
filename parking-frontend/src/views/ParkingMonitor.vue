@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted, watch } from 'vue'
+import { ref, reactive, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import http from '../api'
 import { useParkingStore } from '../stores/parking'
@@ -10,6 +10,16 @@ const parkingStore = useParkingStore()
 const canvasRef = ref(null)
 const spaces = ref([])
 const routePath = ref([])
+const routeDashedFrom = ref(-1)
+const target = ref('manual')
+const recommendResult = ref(null)
+const recommendPos = computed(() => {
+  if (!recommendResult.value) return null
+  const id = recommendResult.value.recommendedSpace.id
+  return spacePositions.find(p => p.id === id) || null
+})
+const hoveredSpace = ref(null)   // { spaceCode, zone, type, status, x, y }
+const tooltipPos = reactive({ x: 0, y: 0 })
 const dialogVisible = ref(false)
 const isEdit = ref(false)
 const form = reactive({ id: null, spaceCode: '', area: '', status: 0, xcoordinate: 0, ycoordinate: 0 })
@@ -269,6 +279,7 @@ function draw() {
     const occupied = s ? s.status === 1 : false
     const exists = !!s
     const selected = parkingStore.selectedSpaceId === pos.id
+    const recommended = recommendResult.value && recommendResult.value.recommendedSpace.id === pos.id
 
     const mg = 2
     const sx = PAD + pos.gx * W + mg
@@ -279,6 +290,8 @@ function draw() {
     // Fill by status
     if (selected) {
       ctx.fillStyle = '#409eff'
+    } else if (recommended) {
+      ctx.fillStyle = '#f5d742'   // golden yellow for recommended
     } else if (!exists) {
       ctx.fillStyle = '#e0e0e0'   // unknown (not yet in DB)
     } else if (occupied) {
@@ -299,19 +312,40 @@ function draw() {
     ctx.textAlign = 'left'
     ctx.textBaseline = 'top'
     ctx.fillText(pos.code, sx + 1, sy + 1)
+
+    // Recommended label
+    if (recommended) {
+      ctx.fillStyle = '#d48806'
+      ctx.font = 'bold 8px sans-serif'
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'bottom'
+      ctx.fillText('系统推荐', sx + sw / 2, sy + sh - 1)
+    }
   }
 
-  // === 8. Route path ===
+  // === 8. Route path (solid for road network, dashed for last segment to spot) ===
   if (routePath.value.length > 0) {
+    const split = routeDashedFrom.value >= 0 ? routeDashedFrom.value : routePath.value.length - 1
+
+    // Solid: road network path
     ctx.strokeStyle = '#409eff'
     ctx.lineWidth = 2.5
     ctx.setLineDash([])
     ctx.beginPath()
     ctx.moveTo(routePath.value[0].x, routePath.value[0].y)
-    for (let i = 1; i < routePath.value.length; i++) {
+    for (let i = 1; i <= split; i++) {
       ctx.lineTo(routePath.value[i].x, routePath.value[i].y)
     }
     ctx.stroke()
+
+    // Dashed: final segment from road to target spot
+    if (split < routePath.value.length - 1) {
+      ctx.setLineDash([6, 4])
+      ctx.beginPath()
+      ctx.moveTo(routePath.value[split].x, routePath.value[split].y)
+      ctx.lineTo(routePath.value[split + 1].x, routePath.value[split + 1].y)
+      ctx.stroke()
+    }
   }
 }
 
@@ -351,6 +385,11 @@ async function handleClick(e) {
   const s = spaces.value.find(sp => sp.id === hit.id)
   if (s && s.status === 1) return
 
+  // Clear recommendation when user picks manually
+  if (recommendResult.value) {
+    recommendResult.value = null
+  }
+
   parkingStore.setSelectedSpaceId(hit.id)
   fetchRoute(hit.id)
   if (parkingStore.pendingRecordId) {
@@ -373,6 +412,31 @@ async function handleClick(e) {
   }
 }
 
+// ==================== Hover Tooltip ====================
+
+function handleHover(e) {
+  const rect = canvasRef.value.getBoundingClientRect()
+  const mx = e.clientX - rect.left
+  const my = e.clientY - rect.top
+  const hit = hitTest(mx, my)
+  if (!hit) {
+    hoveredSpace.value = null
+    return
+  }
+  const s = spaces.value.find(sp => sp.id === hit.id)
+  if (!s) {
+    hoveredSpace.value = null
+    return
+  }
+  hoveredSpace.value = s
+  tooltipPos.x = e.clientX
+  tooltipPos.y = e.clientY
+}
+
+function handleMouseLeave() {
+  hoveredSpace.value = null
+}
+
 async function fetchRoute(spaceId) {
   const space = spaces.value.find(s => s.id === spaceId)
   if (!space || space.xcoordinate == null) return
@@ -384,11 +448,69 @@ async function fetchRoute(spaceId) {
     })
     const json = await res.json()
     if (json.code === 200) {
-      routePath.value = json.data.path || []
+      const path = json.data.path || []
+      // Append the target spot coordinate so the path ends at the actual spot
+      const last = path.length > 0 ? path[path.length - 1] : null
+      if (!last || last.x !== space.xcoordinate || last.y !== space.ycoordinate) {
+        routeDashedFrom.value = path.length - 1  // last road point
+        path.push({ x: space.xcoordinate, y: space.ycoordinate })
+      } else {
+        routeDashedFrom.value = -1
+      }
+      routePath.value = path
       draw()
     }
   } catch {}
 }
+
+// ==================== Recommend ====================
+
+async function fetchRecommend() {
+  const plate = parkingStore.pendingPlateNumber
+  if (!plate) {
+    ElMessage.warning('请先入场登记车辆')
+    target.value = 'manual'
+    return
+  }
+  if (!target.value || target.value === 'manual') return
+  try {
+    const res = await http.post('/parking/recommend', {
+      plateNumber: plate,
+      target: target.value,
+    })
+    if (res.data.code === 200) {
+      const data = res.data.data
+      recommendResult.value = data
+      // Draw path from recommended path
+      if (data.path && data.path.length > 0) {
+        const path = data.path
+        const last = path[path.length - 1]
+        // Check if last point overlaps the spot coordinate
+        const rc = data.recommendedSpace
+        if (last.x !== rc.xcoordinate || last.y !== rc.ycoordinate) {
+          routeDashedFrom.value = path.length - 1
+          path.push({ x: rc.xcoordinate, y: rc.ycoordinate })
+        } else {
+          routeDashedFrom.value = -1
+        }
+        routePath.value = path
+      }
+      draw()
+    } else {
+      ElMessage.error(res.data.message || '推荐失败')
+    }
+  } catch {
+    ElMessage.error('推荐请求失败')
+  }
+}
+
+watch(target, (val) => {
+  if (val && val !== 'manual') {
+    fetchRecommend()
+  } else {
+    recommendResult.value = null
+  }
+})
 
 // ==================== CRUD Dialog ====================
 
@@ -470,18 +592,80 @@ watch(() => parkingStore.refreshKey, () => {
       </div>
     </template>
 
-    <div v-if="parkingStore.pendingPlateNumber" style="margin-bottom:12px;text-align:center">
+    <!-- Target selector -->
+    <div style="margin-bottom:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <span style="font-weight:bold;font-size:14px">你想停在哪？</span>
+      <el-select v-model="target" placeholder="请选择" style="width:240px" clearable>
+        <el-option label="1号电梯附近" value="1号电梯" />
+        <el-option label="2号电梯附近" value="2号电梯" />
+        <el-option label="A区充电车位" value="A区充电" />
+        <el-option label="C区充电车位" value="C区充电" />
+        <el-option label="自选车位（我自己点地图）" value="manual" />
+      </el-select>
+      <span v-if="parkingStore.pendingPlateNumber" style="color:#909399;font-size:13px">
+        当前车辆：<strong>{{ parkingStore.pendingPlateNumber }}</strong>
+      </span>
+    </div>
+
+    <div v-if="recommendResult" class="recommend-bar">
+      <span style="font-weight:bold;color:#d48806">系统推荐：{{ recommendResult.recommendedSpace.spaceCode }}</span>
+      <span v-if="recommendResult.details"> ｜ 距离成本：{{ (recommendResult.details.distanceCost * 100).toFixed(0) }}% ｜ 拥堵成本：{{ (recommendResult.details.congestionCost * 100).toFixed(0) }}% ｜
+        <el-tag size="small" type="warning">综合评分 {{ ((1 - recommendResult.details.compositeCost) * 100).toFixed(0) }}分</el-tag>
+      </span>
+      <span style="margin-left:auto;font-size:13px;color:#909399">目标：{{ recommendResult.details.target }}</span>
+    </div>
+
+    <div v-if="parkingStore.pendingPlateNumber && target === 'manual'" style="margin-bottom:12px;text-align:center">
       <el-alert type="info" :closable="false" show-icon>
         当前车辆：<strong>{{ parkingStore.pendingPlateNumber }}</strong>，请点击一个空闲车位
       </el-alert>
     </div>
 
     <div style="text-align:center">
-      <canvas
-        ref="canvasRef"
-        @click="handleClick"
-        style="border:1px solid #ccc;border-radius:4px;background:#fafafa;display:inline-block"
-      />
+      <div style="position:relative;display:inline-block">
+        <canvas
+          ref="canvasRef"
+          @click="handleClick"
+          @mousemove="handleHover"
+          @mouseleave="handleMouseLeave"
+          style="border:1px solid #ccc;border-radius:4px;background:#fafafa;display:block"
+        />
+        <!-- Flashing border overlay for recommended space -->
+        <div
+          v-if="recommendPos"
+          class="recommend-flash"
+          :style="{
+            position: 'absolute',
+            left: (PAD + recommendPos.gx * W) + 'px',
+            top: (PAD + recommendPos.row * H) + 'px',
+            width: W + 'px',
+            height: H + 'px',
+          }"
+        ></div>
+        <div
+          v-if="hoveredSpace"
+          :style="{
+            position: 'fixed',
+            left: tooltipPos.x + 12 + 'px',
+            top: tooltipPos.y + 12 + 'px',
+            background: '#fff',
+            border: '1px solid #d9d9d9',
+            borderRadius: '6px',
+            padding: '8px 12px',
+            fontSize: '13px',
+            lineHeight: '1.8',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+            zIndex: 2000,
+            pointerEvents: 'none',
+            whiteSpace: 'nowrap',
+          }"
+        >
+          <div><strong>{{ hoveredSpace.spaceCode }}</strong></div>
+          <div>区域：{{ hoveredSpace.zone || '-' }}</div>
+          <div>类型：{{ hoveredSpace.type === 'CHARGING' ? '充电车位' : '普通车位' }}</div>
+          <div>状态：<span :style="{ color: hoveredSpace.status === 0 ? '#67c23a' : '#f56c6c' }">{{ hoveredSpace.status === 0 ? '空闲' : '已占用' }}</span></div>
+        </div>
+      </div>
     </div>
 
     <div style="margin-top:12px;display:flex;gap:16px;font-size:13px;flex-wrap:wrap">
@@ -490,6 +674,7 @@ watch(() => parkingStore.refreshKey, () => {
       <span><span style="display:inline-block;width:12px;height:12px;background:#409eff;border-radius:2px;vertical-align:middle;margin-right:4px"></span>已选车位</span>
       <span><span style="display:inline-block;width:12px;height:12px;background:#e0e0e0;border-radius:2px;vertical-align:middle;margin-right:4px;border:1px solid #aaa"></span>未录入</span>
       <span><span style="display:inline-block;width:12px;height:12px;border:2px solid #0066CC;border-radius:2px;vertical-align:middle;margin-right:4px"></span>充电桩车位</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:#f5d742;border-radius:2px;vertical-align:middle;margin-right:4px"></span>系统推荐</span>
       <span v-if="parkingStore.selectedSpaceId">已选: <el-tag size="small">{{ parkingStore.selectedSpaceId }}</el-tag></span>
     </div>
 
@@ -544,3 +729,30 @@ watch(() => parkingStore.refreshKey, () => {
     </el-dialog>
   </el-card>
 </template>
+
+<style scoped>
+.recommend-bar {
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.recommend-flash {
+  border: 3px solid #f5d742;
+  border-radius: 3px;
+  pointer-events: none;
+  box-sizing: border-box;
+  animation: flash-border 1.2s ease-in-out infinite;
+  z-index: 10;
+}
+@keyframes flash-border {
+  0%, 100% { border-color: #f5d742; opacity: 1; }
+  50% { border-color: #e6a23c; opacity: 0.5; }
+}
+</style>

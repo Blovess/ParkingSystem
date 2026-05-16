@@ -208,12 +208,14 @@ INSERT INTO parking_space (id, space_code, area, status, type, zone, x_coordinat
 (135, 'D019', 'D', 0, 'NORMAL', 'D区', 868, 545),
 (136, 'D020', 'D', 0, 'NORMAL', 'D区', 902, 545);
 
--- ==================== Graph Vertex Seed Data ====================
+-- ==================== Graph Model ====================
 -- Road layout matches the canvas in ParkingMonitor.vue:
 --   3 horizontal roads: y=125 (H1, A-B), y=305 (H2, B-C), y=485 (H3, C-D)
---   5 vertical lanes: x=35 (left), x=188 (gx=4), x=477 (center/elevator), x=766 (gx=21), x=919 (right)
---   Entry: left side of H2 (near "← 入口")
---   Exit: right side of H1 (near "出口 →")
+--   2 vertical through-roads: x=188 (V4/gx=4), x=766 (V21/gx=21)
+--   Entry: left side of H2  |  Exit: right side of H1
+--   Left/right boundary walls (x=35, x=919) are NOT drivable
+--   Center vertical road (x=477) is NOT a through-road (passes through parking gaps)
+--   All pathfinding uses only actual drivable roads
 
 SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE graph_edge;
@@ -243,87 +245,52 @@ INSERT INTO graph_vertex (id, name, type, x, y) VALUES
 (12, 'H3_C', 'ROAD', 477, 485),
 (13, 'H3_R', 'ROAD', 919, 485),
 
--- Vertical road at gx=4 (x=188): connects H1-H2-H3
+-- V4 vertical (x=188): connects H1-H2-H3
 (14, 'V4_H1', 'ROAD', 188, 125),
 (15, 'V4_H2', 'ROAD', 188, 305),
 (16, 'V4_H3', 'ROAD', 188, 485),
 
--- Vertical road at gx=21 (x=766): connects H1-H2-H3
+-- V21 vertical (x=766): connects H1-H2-H3
 (17, 'V21_H1', 'ROAD', 766, 125),
 (18, 'V21_H2', 'ROAD', 766, 305),
 (19, 'V21_H3', 'ROAD', 766, 485);
 
 -- ==================== Graph Edge Seed Data ====================
 -- All edges are bidirectional (each pair stored once, graph is undirected)
+-- Only drivable roads are included: H1/H2/H3 horizontal + V4/V21 vertical
+-- Center vertical (x=477) omitted — passes through parking spot gaps
+-- Left/right boundary walls (x=35, x=919) omitted — not drivable
 
--- === H1 horizontal (y=125) ===
--- H1_L(5) ↔ V4_H1(14): |188-35| = 153
+-- === H1 horizontal (y=125): H1_L ↔ V4_H1 ↔ H1_C ↔ V21_H1 ↔ H1_R ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (5, 14, 153);
--- V4_H1(14) ↔ H1_C(6): |477-188| = 289
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (14, 6, 289);
--- H1_C(6) ↔ V21_H1(17): |766-477| = 289
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (6, 17, 289);
--- V21_H1(17) ↔ H1_R(7): |919-766| = 153
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (17, 7, 153);
 
--- === H2 horizontal (y=305) ===
--- H2_L(8) ↔ V4_H2(15): |188-35| = 153
+-- === H2 horizontal (y=305): H2_L ↔ V4_H2 ↔ H2_C ↔ V21_H2 ↔ H2_R ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (8, 15, 153);
--- V4_H2(15) ↔ H2_C(9): |477-188| = 289
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (15, 9, 289);
--- H2_C(9) ↔ V21_H2(18): |766-477| = 289
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (9, 18, 289);
--- V21_H2(18) ↔ H2_R(10): |919-766| = 153
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (18, 10, 153);
 
--- === H3 horizontal (y=485) ===
--- H3_L(11) ↔ V4_H3(16): |188-35| = 153
+-- === H3 horizontal (y=485): H3_L ↔ V4_H3 ↔ H3_C ↔ V21_H3 ↔ H3_R ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (11, 16, 153);
--- V4_H3(16) ↔ H3_C(12): |477-188| = 289
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (16, 12, 289);
--- H3_C(12) ↔ V21_H3(19): |766-477| = 289
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (12, 19, 289);
--- V21_H3(19) ↔ H3_R(13): |919-766| = 153
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (19, 13, 153);
 
--- === Vertical x=35 (left edge) ===
--- H1_L(5) ↔ H2_L(8): |305-125| = 180
-INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (5, 8, 180);
--- H2_L(8) ↔ H3_L(11): |485-305| = 180
-INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (8, 11, 180);
-
--- === Vertical x=188 (gx=4 road) ===
--- V4_H1(14) ↔ V4_H2(15): |305-125| = 180
+-- === V4 vertical (x=188): V4_H1 ↔ V4_H2 ↔ V4_H3 (weights: |305-125|=180, |485-305|=180) ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (14, 15, 180);
--- V4_H2(15) ↔ V4_H3(16): |485-305| = 180
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (15, 16, 180);
 
--- === Vertical x=477 (center / elevator line) ===
--- H1_C(6) ↔ H2_C(9): |305-125| = 180
-INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (6, 9, 180);
--- H2_C(9) ↔ H3_C(12): |485-305| = 180
-INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (9, 12, 180);
-
--- === Vertical x=766 (gx=21 road) ===
--- V21_H1(17) ↔ V21_H2(18): |305-125| = 180
+-- === V21 vertical (x=766): V21_H1 ↔ V21_H2 ↔ V21_H3 ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (17, 18, 180);
--- V21_H2(18) ↔ V21_H3(19): |485-305| = 180
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (18, 19, 180);
 
--- === Vertical x=919 (right edge) ===
--- H1_R(7) ↔ H2_R(10): |305-125| = 180
-INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (7, 10, 180);
--- H2_R(10) ↔ H3_R(13): |485-305| = 180
-INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (10, 13, 180);
-
--- === Entry/Exit connections ===
--- ENTRY(1) ↔ H2_L(8): |35-0| = 35
+-- === Entry & Exit ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (1, 8, 35);
--- EXIT(2) ↔ H1_R(7): |954-919| = 35
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (2, 7, 35);
 
--- === Elevator connections ===
--- ELEVATOR1(3) ↔ H1_C(6): |125-65| = 60
+-- === Elevators (pedestrian, connected to nearest horizontal road) ===
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (3, 6, 60);
--- ELEVATOR2(4) ↔ H3_C(12): |545-485| = 60
 INSERT INTO graph_edge (from_vertex_id, to_vertex_id, weight) VALUES (4, 12, 60);

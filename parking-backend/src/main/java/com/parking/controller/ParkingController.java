@@ -11,13 +11,16 @@ import com.parking.service.ParkingSpaceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/parking")
@@ -172,6 +175,181 @@ public class ParkingController {
         Map<String, Object> data = new LinkedHashMap<>();
         data.put("message", "缴费成功，一路顺风");
         log.info("[离场] 车牌={} 离场完成", plateNumber);
+        return Result.ok(data);
+    }
+
+    // ==================== Recommend ====================
+
+    @PostMapping("/recommend")
+    @Transactional
+    public Result recommend(@RequestBody Map<String, Object> body) {
+        String plateNumber = (String) body.get("plateNumber");
+        String target = (String) body.get("target");
+        if (plateNumber == null || target == null) {
+            return Result.error(400, "缺少plateNumber或target");
+        }
+
+        // 1. All free spaces (exclude road-replaced spots that are invisible on canvas)
+        Set<String> roadCodes = new HashSet<>(Arrays.asList(
+            "B005","B010","C005","C010","B039","B044","C039","C044"
+        ));
+        LambdaQueryWrapper<ParkingSpace> freeQw = new LambdaQueryWrapper<>();
+        freeQw.eq(ParkingSpace::getStatus, 0);
+        List<ParkingSpace> freeSpaces = parkingSpaceService.list(freeQw).stream()
+            .filter(s -> !roadCodes.contains(s.getSpaceCode()))
+            .collect(Collectors.toList());
+
+        // 2. Filter by target
+        double targetX, targetY;
+        List<ParkingSpace> candidates;
+        switch (target) {
+            case "1号电梯":
+                targetX = 477; targetY = 65;
+                candidates = new ArrayList<>(freeSpaces);
+                break;
+            case "2号电梯":
+                targetX = 477; targetY = 545;
+                candidates = new ArrayList<>(freeSpaces);
+                break;
+            case "A区充电":
+                targetX = 120; targetY = 65;
+                candidates = freeSpaces.stream()
+                    .filter(s -> "A区".equals(s.getZone()) && "CHARGING".equals(s.getType()))
+                    .collect(Collectors.toList());
+                break;
+            case "C区充电":
+                targetX = 834; targetY = 395;
+                candidates = freeSpaces.stream()
+                    .filter(s -> "C区".equals(s.getZone()) && "CHARGING".equals(s.getType()))
+                    .collect(Collectors.toList());
+                break;
+            default:
+                return Result.error(400, "无效的target，可选: 1号电梯/2号电梯/A区充电/C区充电");
+        }
+        if (candidates.isEmpty()) {
+            return Result.error(400, "无符合条件的空闲车位");
+        }
+
+        // 3. Congestion per zone
+        List<ParkingSpace> allSpaces = parkingSpaceService.list();
+        Map<String, Long> totalPerZone = allSpaces.stream()
+            .collect(Collectors.groupingBy(s -> s.getZone() != null ? s.getZone() : "", Collectors.counting()));
+        Map<String, Long> occupiedPerZone = allSpaces.stream()
+            .filter(s -> s.getStatus() == 1)
+            .collect(Collectors.groupingBy(s -> s.getZone() != null ? s.getZone() : "", Collectors.counting()));
+        Map<String, Double> congestionMap = new HashMap<>();
+        for (String zone : totalPerZone.keySet()) {
+            long total = totalPerZone.get(zone);
+            long occ = occupiedPerZone.getOrDefault(zone, 0L);
+            congestionMap.put(zone, total > 0 ? (double) occ / total : 0.0);
+        }
+
+        // 4. Distance & composite cost
+        double entryX = 0, entryY = 305;
+        double minD = Double.MAX_VALUE, maxD = Double.MIN_VALUE;
+        int n = candidates.size();
+        double[] dists = new double[n];
+        for (int i = 0; i < n; i++) {
+            ParkingSpace s = candidates.get(i);
+            double sx = s.getXCoordinate() != null ? s.getXCoordinate() : 0;
+            double sy = s.getYCoordinate() != null ? s.getYCoordinate() : 0;
+            double d = Math.abs(sx - entryX) + Math.abs(sy - entryY)   // Entry → space
+                     + Math.abs(sx - targetX) + Math.abs(sy - targetY); // space → target
+            dists[i] = d;
+            if (d < minD) minD = d;
+            if (d > maxD) maxD = d;
+        }
+
+        ParkingSpace best = null;
+        double bestCost = Double.MAX_VALUE, bestNormDist = 0, bestCong = 0;
+        for (int i = 0; i < n; i++) {
+            ParkingSpace s = candidates.get(i);
+            double normDist = maxD > minD ? (dists[i] - minD) / (maxD - minD) : 0;
+            double congestion = congestionMap.getOrDefault(s.getZone() != null ? s.getZone() : "", 0.0);
+            double cost = 0.6 * normDist + 0.4 * congestion;
+            if (cost < bestCost) {
+                bestCost = cost;
+                best = s;
+                bestNormDist = normDist;
+                bestCong = congestion;
+            }
+        }
+
+        // 5. Create parking record (space_id = NULL, assigned later in the frontend)
+        ParkingRecord record = new ParkingRecord();
+        record.setPlateNumber(plateNumber);
+        record.setSpaceId(null);
+        record.setEntryTime(LocalDateTime.now());
+        record.setStatus(0);
+        parkingRecordService.save(record);
+
+        ParkingOrder order = new ParkingOrder();
+        order.setRecordId(record.getId());
+        order.setAmount(BigDecimal.ZERO);
+        order.setPayStatus(0);
+        parkingOrderService.save(order);
+
+        // 6. Get road path from Python microservice
+        List<Map<String, Object>> path = new ArrayList<>();
+        try {
+            RestTemplate rt = new RestTemplate();
+            Map<String, Object> req = new HashMap<>();
+            req.put("target_x", best.getXCoordinate());
+            req.put("target_y", best.getYCoordinate());
+            ResponseEntity<Map> resp = rt.postForEntity("http://localhost:5000/api/path-plan", req, Map.class);
+            Map bodyMap = resp.getBody();
+            if (bodyMap != null) {
+                Map dataMap = (Map) bodyMap.get("data");
+                if (dataMap != null) {
+                    path = (List<Map<String, Object>>) dataMap.get("path");
+                    if (path == null) path = new ArrayList<>();
+                    // Append final spot coordinate
+                    Map<String, Object> last = new LinkedHashMap<>();
+                    last.put("x", best.getXCoordinate());
+                    last.put("y", best.getYCoordinate());
+                    path.add(last);
+                }
+            }
+        } catch (Exception e) {
+            log.warn("路径规划调用失败: {}", e.getMessage());
+        }
+
+        // 7. Build response
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("recordId", record.getId());
+        data.put("orderId", order.getId());
+
+        Map<String, Object> rec = new LinkedHashMap<>();
+        rec.put("id", best.getId());
+        rec.put("spaceCode", best.getSpaceCode());
+        rec.put("zone", best.getZone());
+        rec.put("type", best.getType());
+        rec.put("xcoordinate", best.getXCoordinate());
+        rec.put("ycoordinate", best.getYCoordinate());
+        data.put("recommendedSpace", rec);
+
+        data.put("path", path);
+
+        Map<String, Object> details = new LinkedHashMap<>();
+        details.put("distanceCost", Math.round(bestNormDist * 10000) / 10000.0);
+        details.put("congestionCost", Math.round(bestCong * 10000) / 10000.0);
+        details.put("compositeCost", Math.round(bestCost * 10000) / 10000.0);
+        details.put("target", target);
+        data.put("details", details);
+
+        List<Map<String, Object>> freeList = freeSpaces.stream().map(s -> {
+            Map<String, Object> m = new LinkedHashMap<>();
+            m.put("id", s.getId());
+            m.put("spaceCode", s.getSpaceCode());
+            m.put("zone", s.getZone());
+            m.put("type", s.getType());
+            m.put("status", s.getStatus());
+            m.put("xcoordinate", s.getXCoordinate());
+            m.put("ycoordinate", s.getYCoordinate());
+            return m;
+        }).collect(Collectors.toList());
+        data.put("freeSpaces", freeList);
+
         return Result.ok(data);
     }
 
