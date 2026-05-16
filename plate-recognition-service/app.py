@@ -160,6 +160,63 @@ def path_plan_by_vertex():
     })
 
 
+@app.route("/api/path-distances", methods=["POST"])
+def path_distances():
+    """
+    Batch compute A* road distances.
+
+    Request:
+        { "points": [{"x":..., "y":...}, ...],
+          "from_entry": true/false,
+          "to_x": float, "to_y": float  (used only when from_entry=false) }
+
+    When from_entry=true:
+        distance = A*(entry → nearest_road_of_point)
+    When from_entry=false:
+        distance = A*(nearest_road_of_point → nearest_road_of(to_x, to_y))
+    """
+    data = request.get_json(silent=True)
+    if not data or "points" not in data:
+        return jsonify({"code": 400, "message": "缺少points"}), 400
+
+    points = data["points"]
+    from_entry = data.get("from_entry", True)
+
+    entry = graph.find_entry_vertex()
+    if entry is None:
+        return jsonify({"code": 500, "message": "图模型未加载"}), 500
+
+    to_vid = None
+    if not from_entry:
+        tx = data.get("to_x")
+        ty = data.get("to_y")
+        if tx is None or ty is None:
+            return jsonify({"code": 400, "message": "缺少to_x或to_y"}), 400
+        to_vid, _ = graph.find_nearest_vertex(tx, ty, vertex_type="ROAD")
+
+    distances = []
+    for p in points:
+        x = p.get("x")
+        y = p.get("y")
+        if x is None or y is None:
+            distances.append(None)
+            continue
+        vid, _ = graph.find_nearest_vertex(x, y, vertex_type="ROAD")
+        if vid is None:
+            distances.append(None)
+            continue
+        if from_entry:
+            _, dist = graph.astar(entry["id"], vid)
+        else:
+            if to_vid is None:
+                distances.append(None)
+                continue
+            _, dist = graph.astar(vid, to_vid)
+        distances.append(round(dist, 2) if dist != float("inf") else None)
+
+    return jsonify({"code": 200, "data": {"distances": distances}})
+
+
 @app.route("/api/graph-info", methods=["GET"])
 def graph_info():
     """Return summary info about the loaded graph model."""

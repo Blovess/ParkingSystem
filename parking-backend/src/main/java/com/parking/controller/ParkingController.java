@@ -230,6 +230,20 @@ public class ParkingController {
             return Result.error(400, "无符合条件的空闲车位");
         }
 
+        // Apply walking distance threshold (曼哈顿步行)
+        double walkThreshold = target.equals("1号电梯") || target.equals("2号电梯") ? 400 : 200;
+        List<ParkingSpace> filtered = candidates.stream()
+            .filter(s -> {
+                double sx = s.getXCoordinate() != null ? s.getXCoordinate() : 0;
+                double sy = s.getYCoordinate() != null ? s.getYCoordinate() : 0;
+                double walk = Math.abs(sx - targetX) + Math.abs(sy - targetY);
+                return walk <= walkThreshold;
+            })
+            .collect(Collectors.toList());
+        if (!filtered.isEmpty()) {
+            candidates = filtered;
+        }
+
         // 3. Congestion per zone
         List<ParkingSpace> allSpaces = parkingSpaceService.list();
         Map<String, Long> totalPerZone = allSpaces.stream()
@@ -244,18 +258,52 @@ public class ParkingController {
             congestionMap.put(zone, total > 0 ? (double) occ / total : 0.0);
         }
 
-        // 4. Distance & composite cost
-        double entryX = 0, entryY = 305;
-        double minD = Double.MAX_VALUE, maxD = Double.MIN_VALUE;
+        // 4. Distance & composite cost (A* driving + Manhattan walking × weight)
+        //    walking weight=5: walking 1 unit ≈ driving 5 units (time ratio)
+        double walkWeight = 5.0;
         int n = candidates.size();
+        List<Map<String, Object>> pointsList = new ArrayList<>(n);
+        for (ParkingSpace s : candidates) {
+            Map<String, Object> pt = new HashMap<>();
+            pt.put("x", s.getXCoordinate() != null ? s.getXCoordinate() : 0);
+            pt.put("y", s.getYCoordinate() != null ? s.getYCoordinate() : 0);
+            pointsList.add(pt);
+        }
+
         double[] dists = new double[n];
-        for (int i = 0; i < n; i++) {
-            ParkingSpace s = candidates.get(i);
-            double sx = s.getXCoordinate() != null ? s.getXCoordinate() : 0;
-            double sy = s.getYCoordinate() != null ? s.getYCoordinate() : 0;
-            double d = Math.abs(sx - entryX) + Math.abs(sy - entryY)   // Entry → space
-                     + Math.abs(sx - targetX) + Math.abs(sy - targetY); // space → target
-            dists[i] = d;
+        try {
+            RestTemplate rt = new RestTemplate();
+            // Batch A*: entry → nearest road vertex of each candidate
+            Map<String, Object> req = new HashMap<>();
+            req.put("points", pointsList);
+            req.put("from_entry", true);
+            ResponseEntity<Map> resp = rt.postForEntity(
+                "http://localhost:5000/api/path-distances", req, Map.class);
+            Map bodyMap = (Map) ((Map) resp.getBody()).get("data");
+            List<Double> entryDists = (List<Double>) bodyMap.get("distances");
+
+            // Manhattan walking distance from space to target
+            for (int i = 0; i < n; i++) {
+                ParkingSpace s = candidates.get(i);
+                double sx = s.getXCoordinate() != null ? s.getXCoordinate() : 0;
+                double sy = s.getYCoordinate() != null ? s.getYCoordinate() : 0;
+                double ed = entryDists.get(i) != null ? entryDists.get(i) : 0;
+                double walk = Math.abs(sx - targetX) + Math.abs(sy - targetY);
+                dists[i] = ed + walkWeight * walk;
+            }
+        } catch (Exception e) {
+            log.warn("A*距离查询失败，降级: {}", e.getMessage());
+            for (int i = 0; i < n; i++) {
+                ParkingSpace s = candidates.get(i);
+                double sx = s.getXCoordinate() != null ? s.getXCoordinate() : 0;
+                double sy = s.getYCoordinate() != null ? s.getYCoordinate() : 0;
+                double walk = Math.abs(sx - targetX) + Math.abs(sy - targetY);
+                dists[i] = walkWeight * walk;
+            }
+        }
+
+        double minD = Double.MAX_VALUE, maxD = Double.MIN_VALUE;
+        for (double d : dists) {
             if (d < minD) minD = d;
             if (d > maxD) maxD = d;
         }
