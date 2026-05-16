@@ -555,3 +555,1703 @@ JDBC Connection [HikariProxyConnection@842994163 wrapping com.mysql.cj.jdbc.Conn
 <==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
 <==      Total: 1
 Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c66ec45]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@759818c1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1738527735 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 67, 渝BFU871, null, 2026-05-17 03:14:45, null, 0
+<==        Row: 66, 渝BFU871, null, 2026-05-17 03:14:42, null, 0
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 64, 冀T15888, null, 2026-05-17 02:44:02, 2026-05-17 03:14:37, 1
+<==        Row: 63, 冀T15888, null, 2026-05-17 02:43:59, null, 0
+<==        Row: 62, 冀T15888, null, 2026-05-17 02:43:56, null, 0
+<==        Row: 61, 冀T15888, null, 2026-05-17 02:43:48, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 8
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@759818c1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1583] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2098549325 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 67(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 67, 67, 0.00, 0, 2026-05-17 03:14:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1583]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f8c090c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1466321779 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 66(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 66, 66, 0.00, 0, 2026-05-17 03:14:41
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f8c090c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50cfd33] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@172445943 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50cfd33]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58f95fa8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@981390561 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 64(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 64, 64, 0.00, 1, 2026-05-17 02:44:01
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58f95fa8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187bdab8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@183357952 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 63(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 63, 63, 0.00, 1, 2026-05-17 02:43:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187bdab8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bd66e7d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2101271973 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 62(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 62, 62, 0.00, 1, 2026-05-17 02:43:56
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bd66e7d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@196ce342] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@289522580 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 61(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 61, 61, 0.00, 1, 2026-05-17 02:43:47
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@196ce342]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38f2c082] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1190806061 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38f2c082]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@378a9578] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1290196369 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 67, 渝BFU871, null, 2026-05-17 03:14:45, null, 0
+<==        Row: 66, 渝BFU871, null, 2026-05-17 03:14:42, null, 0
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 64, 冀T15888, null, 2026-05-17 02:44:02, 2026-05-17 03:14:37, 1
+<==        Row: 63, 冀T15888, null, 2026-05-17 02:43:59, null, 0
+<==        Row: 62, 冀T15888, null, 2026-05-17 02:43:56, null, 0
+<==        Row: 61, 冀T15888, null, 2026-05-17 02:43:48, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 8
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@378a9578]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39d09f64] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1138790290 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 67(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 67, 67, 0.00, 0, 2026-05-17 03:14:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39d09f64]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d3e9d7c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1353192448 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 66(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 66, 66, 0.00, 0, 2026-05-17 03:14:41
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d3e9d7c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3aa14b1e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@594408523 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3aa14b1e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38612899] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@136867120 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 64(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 64, 64, 0.00, 1, 2026-05-17 02:44:01
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38612899]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a3ef09] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1773609316 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 63(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 63, 63, 0.00, 1, 2026-05-17 02:43:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a3ef09]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ef4ce95] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2036901349 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 62(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 62, 62, 0.00, 1, 2026-05-17 02:43:56
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ef4ce95]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6773c3fa] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2146118119 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 61(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 61, 61, 0.00, 1, 2026-05-17 02:43:47
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6773c3fa]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a20a2d2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@867550335 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a20a2d2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6df60c5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@135831150 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 67, 渝BFU871, null, 2026-05-17 03:14:45, null, 0
+<==        Row: 66, 渝BFU871, null, 2026-05-17 03:14:42, null, 0
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 64, 冀T15888, null, 2026-05-17 02:44:02, 2026-05-17 03:14:37, 1
+<==        Row: 63, 冀T15888, null, 2026-05-17 02:43:59, null, 0
+<==        Row: 62, 冀T15888, null, 2026-05-17 02:43:56, null, 0
+<==        Row: 61, 冀T15888, null, 2026-05-17 02:43:48, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 8
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6df60c5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49259455] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@872488188 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 67(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 67, 67, 0.00, 0, 2026-05-17 03:14:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49259455]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c68c9fe] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@688548634 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 66(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 66, 66, 0.00, 0, 2026-05-17 03:14:41
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c68c9fe]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5dc1d082] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1466746365 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5dc1d082]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ba3fe8e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1756724408 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 64(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 64, 64, 0.00, 1, 2026-05-17 02:44:01
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ba3fe8e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@553a4b59] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1900648702 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 63(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 63, 63, 0.00, 1, 2026-05-17 02:43:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@553a4b59]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53873f19] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1415632563 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 62(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 62, 62, 0.00, 1, 2026-05-17 02:43:56
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53873f19]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8bed9a2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1655390299 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 61(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 61, 61, 0.00, 1, 2026-05-17 02:43:47
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8bed9a2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@405a252d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1045927757 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@405a252d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42fc4ce8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1002811452 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 67, 渝BFU871, null, 2026-05-17 03:14:45, null, 0
+<==        Row: 66, 渝BFU871, null, 2026-05-17 03:14:42, null, 0
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 64, 冀T15888, null, 2026-05-17 02:44:02, 2026-05-17 03:14:37, 1
+<==        Row: 63, 冀T15888, null, 2026-05-17 02:43:59, null, 0
+<==        Row: 62, 冀T15888, null, 2026-05-17 02:43:56, null, 0
+<==        Row: 61, 冀T15888, null, 2026-05-17 02:43:48, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 8
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42fc4ce8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@576cc917] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2010596382 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 67(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 67, 67, 0.00, 0, 2026-05-17 03:14:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@576cc917]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3663018e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@133579300 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 66(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 66, 66, 0.00, 0, 2026-05-17 03:14:41
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3663018e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17677bf] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@800549230 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17677bf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30883c73] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@49380946 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 64(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 64, 64, 0.00, 1, 2026-05-17 02:44:01
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30883c73]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2307bb6f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1377657048 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 63(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 63, 63, 0.00, 1, 2026-05-17 02:43:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2307bb6f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10f9d6d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@525177568 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 62(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 62, 62, 0.00, 1, 2026-05-17 02:43:56
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10f9d6d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41a62f34] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1019164312 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 61(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 61, 61, 0.00, 1, 2026-05-17 02:43:47
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41a62f34]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1075ee4c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1624943865 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1075ee4c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76020372] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1508701999 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76020372]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@434fc12e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@623920038 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@434fc12e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@718a5560] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1290906830 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@718a5560]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44d9941] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1333938505 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44d9941]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55624ca9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1024282837 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55624ca9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26e8458d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1638417149 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26e8458d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c4b5e59] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@571701634 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c4b5e59]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cee6e53] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2046903297 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cee6e53]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10be6b85] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1333592887 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10be6b85]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37cff5f8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1462307293 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37cff5f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c515a9e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1157172953 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c515a9e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bfc52f7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1040149180 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bfc52f7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50837d20] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1096898896 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50837d20]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70f1966a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@995135273 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70f1966a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4111d721] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1034902447 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4111d721]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586488de] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@933768073 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,space_code,area,status,type,zone,x_coordinate,y_coordinate FROM parking_space
+==> Parameters: 
+<==    Columns: id, space_code, area, status, type, zone, x_coordinate, y_coordinate
+<==        Row: 1, A001, A, 1, CHARGING, A区, 52.0, 65.0
+<==        Row: 2, A002, A, 0, CHARGING, A区, 86.0, 65.0
+<==        Row: 3, A003, A, 1, CHARGING, A区, 120.0, 65.0
+<==        Row: 4, A004, A, 1, CHARGING, A区, 154.0, 65.0
+<==        Row: 5, A005, A, 0, CHARGING, A区, 188.0, 65.0
+<==        Row: 6, A006, A, 0, NORMAL, A区, 256.0, 65.0
+<==        Row: 7, A007, A, 0, NORMAL, A区, 290.0, 65.0
+<==        Row: 8, A008, A, 0, NORMAL, A区, 324.0, 65.0
+<==        Row: 9, A009, A, 0, NORMAL, A区, 358.0, 65.0
+<==        Row: 10, A010, A, 0, NORMAL, A区, 392.0, 65.0
+<==        Row: 11, A011, A, 0, NORMAL, A区, 562.0, 65.0
+<==        Row: 12, A012, A, 0, NORMAL, A区, 596.0, 65.0
+<==        Row: 13, A013, A, 0, NORMAL, A区, 630.0, 65.0
+<==        Row: 14, A014, A, 0, NORMAL, A区, 664.0, 65.0
+<==        Row: 15, A015, A, 0, NORMAL, A区, 698.0, 65.0
+<==        Row: 16, A016, A, 0, NORMAL, A区, 766.0, 65.0
+<==        Row: 17, A017, A, 0, NORMAL, A区, 800.0, 65.0
+<==        Row: 18, A018, A, 0, NORMAL, A区, 834.0, 65.0
+<==        Row: 19, A019, A, 0, NORMAL, A区, 868.0, 65.0
+<==        Row: 20, A020, A, 0, NORMAL, A区, 902.0, 65.0
+<==        Row: 21, B001, B, 0, NORMAL, B区, 52.0, 185.0
+<==        Row: 22, B002, B, 0, NORMAL, B区, 86.0, 185.0
+<==        Row: 23, B003, B, 0, NORMAL, B区, 120.0, 185.0
+<==        Row: 24, B004, B, 0, NORMAL, B区, 154.0, 185.0
+<==        Row: 25, B005, B, 0, NORMAL, B区, 188.0, 185.0
+<==        Row: 26, B006, B, 0, NORMAL, B区, 52.0, 245.0
+<==        Row: 27, B007, B, 0, NORMAL, B区, 86.0, 245.0
+<==        Row: 28, B008, B, 1, NORMAL, B区, 120.0, 245.0
+<==        Row: 29, B009, B, 0, NORMAL, B区, 154.0, 245.0
+<==        Row: 30, B010, B, 0, NORMAL, B区, 188.0, 245.0
+<==        Row: 31, B011, B, 1, NORMAL, B区, 222.0, 185.0
+<==        Row: 32, B012, B, 0, NORMAL, B区, 256.0, 185.0
+<==        Row: 33, B013, B, 0, NORMAL, B区, 290.0, 185.0
+<==        Row: 34, B014, B, 0, NORMAL, B区, 324.0, 185.0
+<==        Row: 35, B015, B, 0, NORMAL, B区, 358.0, 185.0
+<==        Row: 36, B016, B, 0, NORMAL, B区, 426.0, 185.0
+<==        Row: 37, B017, B, 1, NORMAL, B区, 460.0, 185.0
+<==        Row: 38, B018, B, 1, NORMAL, B区, 494.0, 185.0
+<==        Row: 39, B019, B, 0, NORMAL, B区, 528.0, 185.0
+<==        Row: 40, B020, B, 1, NORMAL, B区, 596.0, 185.0
+<==        Row: 41, B021, B, 0, NORMAL, B区, 630.0, 185.0
+<==        Row: 42, B022, B, 0, NORMAL, B区, 664.0, 185.0
+<==        Row: 43, B023, B, 0, NORMAL, B区, 698.0, 185.0
+<==        Row: 44, B024, B, 0, NORMAL, B区, 732.0, 185.0
+<==        Row: 45, B025, B, 0, NORMAL, B区, 222.0, 245.0
+<==        Row: 46, B026, B, 0, NORMAL, B区, 256.0, 245.0
+<==        Row: 47, B027, B, 0, NORMAL, B区, 290.0, 245.0
+<==        Row: 48, B028, B, 0, NORMAL, B区, 324.0, 245.0
+<==        Row: 49, B029, B, 0, NORMAL, B区, 358.0, 245.0
+<==        Row: 50, B030, B, 0, NORMAL, B区, 426.0, 245.0
+<==        Row: 51, B031, B, 0, NORMAL, B区, 460.0, 245.0
+<==        Row: 52, B032, B, 0, NORMAL, B区, 494.0, 245.0
+<==        Row: 53, B033, B, 0, NORMAL, B区, 528.0, 245.0
+<==        Row: 54, B034, B, 0, NORMAL, B区, 596.0, 245.0
+<==        Row: 55, B035, B, 0, NORMAL, B区, 630.0, 245.0
+<==        Row: 56, B036, B, 0, NORMAL, B区, 664.0, 245.0
+<==        Row: 57, B037, B, 0, NORMAL, B区, 698.0, 245.0
+<==        Row: 58, B038, B, 0, NORMAL, B区, 732.0, 245.0
+<==        Row: 59, B039, B, 0, NORMAL, B区, 766.0, 185.0
+<==        Row: 60, B040, B, 0, NORMAL, B区, 800.0, 185.0
+<==        Row: 61, B041, B, 0, NORMAL, B区, 834.0, 185.0
+<==        Row: 62, B042, B, 0, NORMAL, B区, 868.0, 185.0
+<==        Row: 63, B043, B, 0, NORMAL, B区, 902.0, 185.0
+<==        Row: 64, B044, B, 0, NORMAL, B区, 766.0, 245.0
+<==        Row: 65, B045, B, 0, NORMAL, B区, 800.0, 245.0
+<==        Row: 66, B046, B, 0, NORMAL, B区, 834.0, 245.0
+<==        Row: 67, B047, B, 0, NORMAL, B区, 868.0, 245.0
+<==        Row: 68, B048, B, 0, NORMAL, B区, 902.0, 245.0
+<==        Row: 69, C001, C, 0, NORMAL, C区, 52.0, 365.0
+<==        Row: 70, C002, C, 0, NORMAL, C区, 86.0, 365.0
+<==        Row: 71, C003, C, 0, NORMAL, C区, 120.0, 365.0
+<==        Row: 72, C004, C, 0, NORMAL, C区, 154.0, 365.0
+<==        Row: 73, C005, C, 0, NORMAL, C区, 188.0, 365.0
+<==        Row: 74, C006, C, 0, NORMAL, C区, 52.0, 425.0
+<==        Row: 75, C007, C, 1, NORMAL, C区, 86.0, 425.0
+<==        Row: 76, C008, C, 0, NORMAL, C区, 120.0, 425.0
+<==        Row: 77, C009, C, 0, NORMAL, C区, 154.0, 425.0
+<==        Row: 78, C010, C, 0, NORMAL, C区, 188.0, 425.0
+<==        Row: 79, C011, C, 0, NORMAL, C区, 222.0, 365.0
+<==        Row: 80, C012, C, 0, NORMAL, C区, 256.0, 365.0
+<==        Row: 81, C013, C, 0, NORMAL, C区, 290.0, 365.0
+<==        Row: 82, C014, C, 0, NORMAL, C区, 324.0, 365.0
+<==        Row: 83, C015, C, 0, NORMAL, C区, 358.0, 365.0
+<==        Row: 84, C016, C, 1, NORMAL, C区, 426.0, 365.0
+<==        Row: 85, C017, C, 0, NORMAL, C区, 460.0, 365.0
+<==        Row: 86, C018, C, 0, NORMAL, C区, 494.0, 365.0
+<==        Row: 87, C019, C, 0, NORMAL, C区, 528.0, 365.0
+<==        Row: 88, C020, C, 0, NORMAL, C区, 596.0, 365.0
+<==        Row: 89, C021, C, 0, NORMAL, C区, 630.0, 365.0
+<==        Row: 90, C022, C, 0, NORMAL, C区, 664.0, 365.0
+<==        Row: 91, C023, C, 0, NORMAL, C区, 698.0, 365.0
+<==        Row: 92, C024, C, 0, NORMAL, C区, 732.0, 365.0
+<==        Row: 93, C025, C, 0, NORMAL, C区, 222.0, 425.0
+<==        Row: 94, C026, C, 0, NORMAL, C区, 256.0, 425.0
+<==        Row: 95, C027, C, 0, NORMAL, C区, 290.0, 425.0
+<==        Row: 96, C028, C, 0, NORMAL, C区, 324.0, 425.0
+<==        Row: 97, C029, C, 0, NORMAL, C区, 358.0, 425.0
+<==        Row: 98, C030, C, 1, NORMAL, C区, 426.0, 425.0
+<==        Row: 99, C031, C, 0, NORMAL, C区, 460.0, 425.0
+<==        Row: 100, C032, C, 0, NORMAL, C区, 494.0, 425.0
+<==        Row: 101, C033, C, 0, NORMAL, C区, 528.0, 425.0
+<==        Row: 102, C034, C, 0, NORMAL, C区, 596.0, 425.0
+<==        Row: 103, C035, C, 0, NORMAL, C区, 630.0, 425.0
+<==        Row: 104, C036, C, 0, NORMAL, C区, 664.0, 425.0
+<==        Row: 105, C037, C, 1, NORMAL, C区, 698.0, 425.0
+<==        Row: 106, C038, C, 0, NORMAL, C区, 732.0, 425.0
+<==        Row: 107, C039, C, 0, CHARGING, C区, 766.0, 365.0
+<==        Row: 108, C040, C, 0, CHARGING, C区, 800.0, 365.0
+<==        Row: 109, C041, C, 1, CHARGING, C区, 834.0, 365.0
+<==        Row: 110, C042, C, 0, CHARGING, C区, 868.0, 365.0
+<==        Row: 111, C043, C, 0, CHARGING, C区, 902.0, 365.0
+<==        Row: 112, C044, C, 0, CHARGING, C区, 766.0, 425.0
+<==        Row: 113, C045, C, 0, CHARGING, C区, 800.0, 425.0
+<==        Row: 114, C046, C, 0, CHARGING, C区, 834.0, 425.0
+<==        Row: 115, C047, C, 0, CHARGING, C区, 868.0, 425.0
+<==        Row: 116, C048, C, 1, CHARGING, C区, 902.0, 425.0
+<==        Row: 117, D001, D, 1, NORMAL, D区, 52.0, 545.0
+<==        Row: 118, D002, D, 1, NORMAL, D区, 86.0, 545.0
+<==        Row: 119, D003, D, 1, NORMAL, D区, 120.0, 545.0
+<==        Row: 120, D004, D, 0, NORMAL, D区, 154.0, 545.0
+<==        Row: 121, D005, D, 0, NORMAL, D区, 188.0, 545.0
+<==        Row: 122, D006, D, 0, NORMAL, D区, 256.0, 545.0
+<==        Row: 123, D007, D, 0, NORMAL, D区, 290.0, 545.0
+<==        Row: 124, D008, D, 0, NORMAL, D区, 324.0, 545.0
+<==        Row: 125, D009, D, 0, NORMAL, D区, 358.0, 545.0
+<==        Row: 126, D010, D, 0, NORMAL, D区, 392.0, 545.0
+<==        Row: 127, D011, D, 0, NORMAL, D区, 562.0, 545.0
+<==        Row: 128, D012, D, 0, NORMAL, D区, 596.0, 545.0
+<==        Row: 129, D013, D, 0, NORMAL, D区, 630.0, 545.0
+<==        Row: 130, D014, D, 0, NORMAL, D区, 664.0, 545.0
+<==        Row: 131, D015, D, 0, NORMAL, D区, 698.0, 545.0
+<==        Row: 132, D016, D, 0, NORMAL, D区, 766.0, 545.0
+<==        Row: 133, D017, D, 0, NORMAL, D区, 800.0, 545.0
+<==        Row: 134, D018, D, 0, NORMAL, D区, 834.0, 545.0
+<==        Row: 135, D019, D, 0, NORMAL, D区, 868.0, 545.0
+<==        Row: 136, D020, D, 0, NORMAL, D区, 902.0, 545.0
+<==      Total: 136
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586488de]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f08bc63] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1314846352 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f08bc63]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d395f6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1249036843 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d395f6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6522b709] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2034426494 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6522b709]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1239ac69] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1989760910 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1239ac69]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4209485a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@487386774 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4209485a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e0f02ba] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1456265913 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e0f02ba]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@435ac777] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@542863066 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@435ac777]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bd47af4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1310748550 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bd47af4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77060c98] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@268294998 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77060c98]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66a96009] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1067187649 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66a96009]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@297b5de2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@75483628 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@297b5de2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@230a0834] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1357759994 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@230a0834]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7528eed3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@978290568 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7528eed3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@321b6204] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@16211170 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@321b6204]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d99299f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@83586410 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d99299f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6809307b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@231539397 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6809307b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51663e28] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1892501143 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51663e28]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22908003] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1122462983 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22908003]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c19d29c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@754167017 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c19d29c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dd91c89] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@524722844 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dd91c89]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@b5aea9c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1319277098 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@b5aea9c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22a905b0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@76925325 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22a905b0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f1c093d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@99751403 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f1c093d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7dfa335f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1923123260 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7dfa335f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40314bce] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@118812060 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40314bce]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4251c3b0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@150249231 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4251c3b0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b871f7f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@386337788 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b871f7f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51007a57] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@519664791 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51007a57]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dd4ca05] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2136264490 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dd4ca05]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f535b4e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@886848067 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f535b4e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f87d152] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1274464492 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f87d152]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23554ce0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1921586329 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23554ce0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@504589f5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1501490513 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@504589f5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50b460e2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1988260463 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50b460e2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@749a40c3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@123379138 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@749a40c3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48c7872a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1853708969 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48c7872a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72074487] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2093003959 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72074487]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dfdbe8c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1972827848 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dfdbe8c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d8b9720] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1574060483 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d8b9720]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43a645ff] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1869276703 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43a645ff]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a80d9b1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1266219683 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a80d9b1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@180835a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1030856586 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@180835a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@14c4e19b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@436411763 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@14c4e19b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b3e1748] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1757805965 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b3e1748]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10be390f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@991029255 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10be390f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25b04ada] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@10284041 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25b04ada]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cb5e758] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1542755470 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7cb5e758]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c00ca3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@77381156 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c00ca3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c319240] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1871278682 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c319240]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41f7f68e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1371852642 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41f7f68e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9b0cdd1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1997347311 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9b0cdd1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e962f6d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@15455177 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e962f6d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28ff0508] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@664648253 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28ff0508]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@333b06f8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1673298642 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@333b06f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47ec52b9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@378535923 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47ec52b9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4055d768] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1695104065 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4055d768]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3673c7f6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1483978951 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3673c7f6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5482f6db] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@147912925 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5482f6db]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@628a0ad3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@570231927 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@628a0ad3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34069316] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@107531223 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34069316]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a2d1d14] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@196753183 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a2d1d14]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@393d7f92] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@997855260 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@393d7f92]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23026b67] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1905348986 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23026b67]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7498eeeb] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@386366432 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7498eeeb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c44bfaf] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@253292922 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c44bfaf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1df2851a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@80931020 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1df2851a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef50565] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@556047151 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef50565]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15aa2c06] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@334679547 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15aa2c06]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61e0da19] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@636358719 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61e0da19]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4417a1b9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@954303215 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4417a1b9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d2079f8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1153633676 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d2079f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3935360a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@132409197 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3935360a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b900320] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1603940271 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b900320]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3533c89e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@504452123 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3533c89e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7fd6126f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1418351155 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7fd6126f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7912ced9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1375140474 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7912ced9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43000aa3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@747335708 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43000aa3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68c4104a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@726813411 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68c4104a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d2ba5d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@307065262 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d2ba5d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@142d3156] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@380592604 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@142d3156]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45c0f2c7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@941284520 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45c0f2c7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dbcf4dd] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@74414629 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dbcf4dd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11b71f3e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2068257737 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11b71f3e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@500da1ac] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2045381244 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@500da1ac]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39a4efc9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1859537226 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39a4efc9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c5ca1fe] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1914229019 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c5ca1fe]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74e14b0d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2101036862 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74e14b0d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23a6e612] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@867373322 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23a6e612]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71925ca2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1703981812 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71925ca2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f219ae4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2092278510 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f219ae4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62c387c1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@161759655 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62c387c1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73c81588] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@223050175 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73c81588]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67430722] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1418996247 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67430722]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@553953cf] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@498556770 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@553953cf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@eaf6d1d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@295165996 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@eaf6d1d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a5004ba] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1071800168 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a5004ba]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41214e9d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1094712204 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41214e9d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31482ed6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2052512708 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31482ed6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@83e03d9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2020651670 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@83e03d9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d00f395] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1575609345 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d00f395]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e3db857] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1414232158 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e3db857]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23df39e3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1895027407 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23df39e3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9c34003] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@889098326 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9c34003]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@211c9f3e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@843845702 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@211c9f3e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@195f2d45] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1560257599 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@195f2d45]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@603691a2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@132231087 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@603691a2]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46dacb4f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@305527223 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46dacb4f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13b72411] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@61277595 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13b72411]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@543aa7b5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1205858668 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@543aa7b5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fb345a8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@515202788 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fb345a8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54cabc7e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1364274506 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54cabc7e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17b953ee] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1479769628 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,plate_number,space_id,entry_time,exit_time,status FROM parking_record ORDER BY id DESC
+==> Parameters: 
+<==    Columns: id, plate_number, space_id, entry_time, exit_time, status
+<==        Row: 65, 渝BFU871, 3, 2026-05-17 03:14:40, null, 0
+<==        Row: 60, 冀T15888, 84, 2026-05-17 02:43:45, null, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17b953ee]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6513e4de] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@954789297 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 65(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 65, 65, 0.00, 0, 2026-05-17 03:14:40
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6513e4de]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@504a9d0c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@713406159 wrapping com.mysql.cj.jdbc.ConnectionImpl@35c8efa8] will not be managed by Spring
+==>  Preparing: SELECT id,record_id,amount,pay_status,create_time FROM parking_order WHERE (record_id = ?)
+==> Parameters: 60(Long)
+<==    Columns: id, record_id, amount, pay_status, create_time
+<==        Row: 60, 60, 0.00, 1, 2026-05-17 02:43:44
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@504a9d0c]
