@@ -1,6 +1,7 @@
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\entity\SysUser.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\service\ParkingRecordService.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\mapper\ParkingOrderMapper.java
+C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\entity\GraphEdge.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\mapper\ParkingRecordMapper.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\service\ParkingOrderService.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\controller\ParkingController.java
@@ -10,13 +11,17 @@ C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\j
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\controller\RecordController.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\service\SysUserService.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\controller\UserController.java
+C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\entity\GraphVertex.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\entity\ParkingOrder.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\mapper\ParkingSpaceMapper.java
+C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\service\GraphService.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\ParkingApplication.java
+C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\mapper\GraphEdgeMapper.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\util\JwtUtil.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\controller\SpaceController.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\controller\OrderController.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\config\JwtInterceptor.java
+C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\mapper\GraphVertexMapper.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\entity\ParkingRecord.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\dto\Result.java
 C:\Users\BLOVESS\Desktop\毕设\车牌号们\parking-system\parking-backend\src\main\java\com\parking\config\WebConfig.java

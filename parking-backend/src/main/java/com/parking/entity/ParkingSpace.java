@@ -13,6 +13,8 @@ public class ParkingSpace {
     private String spaceCode;
     private String area;
     private Integer status;
+    private String type;
+    private String zone;
     private Double xCoordinate;
     private Double yCoordinate;
 }

@@ -104,6 +104,9 @@ function generatePositions() {
 
 const spacePositions = generatePositions()
 
+// ==================== Road Filter (spots replaced by roadway) ====================
+const ROAD_CODES = new Set(['B005','B010','C005','C010','B039','B044','C039','C044'])
+
 // ==================== Drawing Primitives ====================
 
 function drawPillar(gx, row, pos) {
@@ -165,20 +168,44 @@ function draw() {
   drawHorizontalDashed(PAD + 7 * H)   // C bottom
   drawHorizontalDashed(PAD + 8 * H)   // D top
 
-  // B area vertical dashed borders (left & right)
+  // B area vertical dashed borders (left & right) + internal roads at gx=4, gx=21
   ctx.beginPath()
   ctx.moveTo(PAD, PAD + 2 * H)
   ctx.lineTo(PAD, PAD + 4 * H)
   ctx.moveTo(PAD + TOTAL_GX * W, PAD + 2 * H)
   ctx.lineTo(PAD + TOTAL_GX * W, PAD + 4 * H)
+  // Road at gx=4 (left edge)
+  ctx.moveTo(PAD + 4 * W, PAD + 2 * H)
+  ctx.lineTo(PAD + 4 * W, PAD + 4 * H)
+  // Road at gx=4 (right edge)
+  ctx.moveTo(PAD + 5 * W, PAD + 2 * H)
+  ctx.lineTo(PAD + 5 * W, PAD + 4 * H)
+  // Road at gx=21 (left edge)
+  ctx.moveTo(PAD + 21 * W, PAD + 2 * H)
+  ctx.lineTo(PAD + 21 * W, PAD + 4 * H)
+  // Road at gx=21 (right edge)
+  ctx.moveTo(PAD + 22 * W, PAD + 2 * H)
+  ctx.lineTo(PAD + 22 * W, PAD + 4 * H)
   ctx.stroke()
 
-  // C area vertical dashed borders (left & right)
+  // C area vertical dashed borders (left & right) + internal roads at gx=4, gx=21
   ctx.beginPath()
   ctx.moveTo(PAD, PAD + 5 * H)
   ctx.lineTo(PAD, PAD + 7 * H)
   ctx.moveTo(PAD + TOTAL_GX * W, PAD + 5 * H)
   ctx.lineTo(PAD + TOTAL_GX * W, PAD + 7 * H)
+  // Road at gx=4 (left edge)
+  ctx.moveTo(PAD + 4 * W, PAD + 5 * H)
+  ctx.lineTo(PAD + 4 * W, PAD + 7 * H)
+  // Road at gx=4 (right edge)
+  ctx.moveTo(PAD + 5 * W, PAD + 5 * H)
+  ctx.lineTo(PAD + 5 * W, PAD + 7 * H)
+  // Road at gx=21 (left edge)
+  ctx.moveTo(PAD + 21 * W, PAD + 5 * H)
+  ctx.lineTo(PAD + 21 * W, PAD + 7 * H)
+  // Road at gx=21 (right edge)
+  ctx.moveTo(PAD + 22 * W, PAD + 5 * H)
+  ctx.lineTo(PAD + 22 * W, PAD + 7 * H)
   ctx.stroke()
 
   ctx.setLineDash([])
@@ -235,8 +262,9 @@ function draw() {
   ctx.fillText('C区', PAD + 4, PAD + 5 * H + 4)
   ctx.fillText('D区', PAD + 4, PAD + 8 * H + 4)
 
-  // === 7. Parking spots ===
+  // === 7. Parking spots (skip codes replaced by roadway) ===
   for (const pos of spacePositions) {
+    if (ROAD_CODES.has(pos.code)) continue
     const s = spaces.value.find(sp => sp.id === pos.id)
     const occupied = s ? s.status === 1 : false
     const exists = !!s
@@ -303,6 +331,7 @@ async function loadSpaces() {
 
 function hitTest(mx, my) {
   for (const pos of spacePositions) {
+    if (ROAD_CODES.has(pos.code)) continue
     const left = PAD + pos.gx * W
     const top = PAD + pos.row * H
     if (mx >= left && mx <= left + W && my >= top && my <= top + H) {
@@ -345,10 +374,19 @@ async function handleClick(e) {
 }
 
 async function fetchRoute(spaceId) {
+  const space = spaces.value.find(s => s.id === spaceId)
+  if (!space || space.xcoordinate == null) return
   try {
-    const res = await http.post('/parking/route', { spaceId })
-    if (res.data.code === 200) {
-      routePath.value = res.data.data || []
+    const res = await fetch('http://localhost:5000/api/path-plan', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ target_x: space.xcoordinate, target_y: space.ycoordinate })
+    })
+    const json = await res.json()
+    if (json.code === 200) {
+      const path = json.data.path || []
+      path.push({ x: space.xcoordinate, y: space.ycoordinate })
+      routePath.value = path
       draw()
     }
   } catch {}

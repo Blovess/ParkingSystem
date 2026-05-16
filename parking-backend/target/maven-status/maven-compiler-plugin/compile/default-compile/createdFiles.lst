@@ -7,11 +7,15 @@ com\parking\mapper\ParkingSpaceMapper.class
 com\parking\controller\SpaceController.class
 com\parking\mapper\ParkingOrderMapper.class
 com\parking\service\SysUserService.class
+com\parking\entity\GraphEdge.class
+com\parking\service\GraphService.class
 com\parking\entity\ParkingRecord.class
+com\parking\entity\GraphVertex.class
 com\parking\mapper\SysUserMapper.class
 com\parking\service\ParkingRecordService.class
 com\parking\entity\SysUser.class
 com\parking\controller\ParkingController.class
+com\parking\mapper\GraphVertexMapper.class
 com\parking\ParkingApplication.class
 com\parking\config\WebConfig.class
 com\parking\dto\Result.class
@@ -24,3 +28,4 @@ com\parking\controller\RecordController.class
 com\parking\exception\GlobalExceptionHandler.class
 com\parking\entity\ParkingOrder.class
 com\parking\config\CorsConfig.class
+com\parking\mapper\GraphEdgeMapper.class
