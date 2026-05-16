@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,7 +52,22 @@ public class RecordController {
         Page<ParkingRecord> result = parkingRecordService.page(page, qw);
         for (ParkingRecord record : result.getRecords()) {
             ParkingOrder order = parkingOrderService.findByRecordId(record.getId());
-            record.setAmount(order != null ? order.getAmount() : null);
+            if (order != null) {
+                // For in-progress records, calculate amount dynamically
+                if (record.getStatus() == 0 && record.getEntryTime() != null) {
+                    long minutes = Duration.between(record.getEntryTime(), LocalDateTime.now()).toMinutes();
+                    if (minutes <= 30) {
+                        record.setAmount(BigDecimal.ZERO);
+                    } else {
+                        long hours = (long) Math.ceil(minutes / 60.0);
+                        record.setAmount(new BigDecimal(hours * 3));
+                    }
+                } else {
+                    record.setAmount(order.getAmount());
+                }
+            } else {
+                record.setAmount(null);
+            }
         }
         Map<String, Object> data = new HashMap<>();
         data.put("records", result.getRecords());
